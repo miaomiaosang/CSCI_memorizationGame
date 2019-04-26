@@ -1,10 +1,9 @@
 package com.mms.memorizationgame;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+
 
 import java.util.Comparator;
-
+// java comparator to sort user's game record, for easy level records
 public class SortByItemhard implements Comparator<User> {
         /*
          * (non-Javadoc)

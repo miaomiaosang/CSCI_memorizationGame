@@ -6,7 +6,8 @@ import android.support.v4.app.FragmentTransaction;
 import java.util.Random;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-
+// The abstract class for different levels of games
+//including utilities that each level game need
 public abstract class Level extends Fragment {
 
     public void shuffle(int cards[], int n){

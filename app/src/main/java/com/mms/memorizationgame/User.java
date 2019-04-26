@@ -5,6 +5,8 @@ import com.google.firebase.database.Exclude;
 import java.util.HashMap;
 import java.util.Map;
 
+// User data profile
+
 public class User {
     public String name;
     public String email;

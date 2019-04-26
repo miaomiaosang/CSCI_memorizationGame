@@ -21,7 +21,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
-
+// The fragment that shows where the user completes the game within certain amount of time
+// update the best score of the user to database
 public class Result extends Fragment {
 
 
@@ -52,7 +53,7 @@ public class Result extends Fragment {
 
         final int time;
         time = b.getInt("Time");
-
+        // initiate database reference
         final DatabaseReference mUIDReference = FirebaseDatabase.getInstance().getReference()
                 .child("user").child(uid);
 
@@ -83,7 +84,8 @@ public class Result extends Fragment {
                 int time_record = dataSnapshot.child(level).getValue(int.class);
                 Log.d("hhh","hhh");
                 Log.d("time record",Integer.toString(time_record));
-                if(time < time_record){
+                if(time < time_record){ //If the time that user uses in the current game is less
+                    //than his personal record
                     mUIDReference.child(level).setValue(time);
                 }
 

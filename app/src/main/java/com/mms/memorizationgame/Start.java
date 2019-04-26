@@ -11,7 +11,8 @@ import android.view.ViewGroup;
 import com.wajahatkarim3.easyflipview.EasyFlipView;
 
 public class Start extends Fragment {
-
+// the first page after log in
+    // gives user choices for easy/hard game
 
     public Start() {
         // Required empty public constructor

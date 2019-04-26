@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Activity_login extends AppCompatActivity {
 
-    // TODO: Add member variables here:
+
     private FirebaseAuth mAuth;
     // UI references.
     private EditText mEmailView;
@@ -68,13 +68,13 @@ public class Activity_login extends AppCompatActivity {
 //        }
 //    }
 
-    //Hard ranl
 
+    //show ranked easy level game result, the user who completed game with shorter time is listed in front
     public void showeasyrank(View v){
         Intent intent = new Intent(Activity_login.this, EasyRank.class);
         startActivity(intent);
     }
-
+    ////show ranked hard level game result, the user who completed game with shorter time is listed in front
     public void showhardrank(View v){
         Intent intent = new Intent(Activity_login.this, HardRank.class);
         startActivity(intent);
@@ -82,7 +82,6 @@ public class Activity_login extends AppCompatActivity {
 
     // Executed when Sign in button pressed
     public void signInExistingUser(View v)   {
-        // TODO: Call attemptLogin() here
         attemptLogin();
 
     }
@@ -95,7 +94,7 @@ public class Activity_login extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // TODO: Complete the attemptLogin() method
+    //user authorization with Google Firebase
     private void attemptLogin() {
 
         final String email = mEmailView.getText().toString();
@@ -105,7 +104,7 @@ public class Activity_login extends AppCompatActivity {
             if (email.equals("") || password.equals("")) return;
         Toast.makeText(this, "Login in progress...", Toast.LENGTH_SHORT).show();
 
-        // TODO: Use FirebaseAuth to sign in with email & password
+
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -128,7 +127,7 @@ public class Activity_login extends AppCompatActivity {
 
 
     }
-
+    // error message shows when there is problem log in
     private void showErrorDialog(String message) {
 
         new AlertDialog.Builder(this)

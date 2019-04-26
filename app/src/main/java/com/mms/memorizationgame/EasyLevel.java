@@ -24,11 +24,12 @@ import com.wajahatkarim3.easyflipview.EasyFlipView;
 import java.util.ArrayList;
 
 
-
+// The game fragment of easy level game
 public class EasyLevel extends Level {
 
     private RecyclerView EasyLevelRecyclerView;
     public ArrayList<Integer> cards;
+    //The easy level game contains 6 kinds of cards
     public int CARDS[] = {
             R.drawable.card1,
             R.drawable.card2,
@@ -48,7 +49,7 @@ public class EasyLevel extends Level {
     public boolean isPaused, isCancelled;
     Bundle b;
     private SharedPreferences pref;
-    int pos, count, bestScore;
+    int pos, count;
 
 
     public EasyLevel() {
@@ -56,24 +57,26 @@ public class EasyLevel extends Level {
     }
 
 
-
+    // initiate easy level fragment initiate
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_easy_level, container, false);
 
+        //The list that contains card
         EasyLevelRecyclerView = rootView.findViewById(R.id.easylevelview);
         b=new Bundle();
         b.putInt("level",Constants.LEVEL_EASY);
-        pref = getActivity().getSharedPreferences(Constants.PREF_NAME,0);
-        bestScore = pref.getInt(Constants.EASY_HIGH_KEY, (int) (Constants.EASY_TIME/Constants.TIMER_INTERVAL));
 
 
+
+        //initiate the recycler view
 
         RecyclerView.LayoutManager lm = new GridLayoutManager(getContext(),3, LinearLayoutManager.VERTICAL,false);
         EasyLevelRecyclerView.setLayoutManager(lm);
 
         cards = new ArrayList<>();
+
         // TODO: card shuffle here
 
         shuffle(CARDS,Constants.EASY_NO_OF_CARDS);
@@ -82,11 +85,13 @@ public class EasyLevel extends Level {
             cards.add(card);
         }
 
+        //set up easy view adapter, which is in the adapter pattern
         EasyLevelRecyclerView.setAdapter(new EasyLevelAdapter(cards));
 
         isPaused = false;
         isCancelled = false;
 
+        //set up countdown timer
         new CountDownTimer(Constants.EASY_TIME,Constants.TIMER_INTERVAL){
             @Override
             public void onTick(long millisUntilFinished) {
@@ -105,7 +110,7 @@ public class EasyLevel extends Level {
                     }
                 }
             }
-
+            //The game ends automatically when time runs out
             @Override
             public void onFinish() {
                 if (count < Constants.EASY_NO_OF_CARDS) {
@@ -116,7 +121,7 @@ public class EasyLevel extends Level {
             }
         }.start();
 
-
+        // click events on the cards
         rootView.setFocusableInTouchMode(true);
         rootView.requestFocus();
         rootView.setOnKeyListener(new View.OnKeyListener() {

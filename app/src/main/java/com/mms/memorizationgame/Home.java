@@ -28,6 +28,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+
+// The container that contains fragments of games
+//changing of game scenario are based on changing of game fragments
 public class Home extends AppCompatActivity{
 
 
@@ -74,7 +77,7 @@ public class Home extends AppCompatActivity{
     }
 
     int counter = 0;
-
+    // deal with back press button events
     @Override
     public void onBackPressed() {
         Fragment currentFragment = getSupportFragmentManager().findFragmentById(R.id.layoutFragment);

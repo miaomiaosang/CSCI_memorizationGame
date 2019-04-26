@@ -24,7 +24,9 @@ import com.wajahatkarim3.easyflipview.EasyFlipView;
 import java.util.ArrayList;
 
 
-
+//The hard level is very similar with the easy level, not too many comments in this
+//I tried best to encapsulate things but there are too many kinds and amounts of variables
+// The design of Android framework on Activities makes value passing kind of difficult
 public class HardLevel extends Level {
 
     private RecyclerView HardLevelRecyclerView;
@@ -52,7 +54,7 @@ public class HardLevel extends Level {
     public long RemainingTime;
     public boolean isPaused, isCancelled;
     private SharedPreferences pref;
-    int pos, count, bestScore;
+    int pos, count;
 
     public HardLevel() {
         // Required empty public constructor
@@ -70,8 +72,8 @@ public class HardLevel extends Level {
         b=new Bundle();
         b.putInt("level",Constants.LEVEL_HARD);
 
-        pref = getActivity().getSharedPreferences(Constants.PREF_NAME,0);
-        bestScore = pref.getInt(Constants.HARD_HIGH_KEY, (int) (Constants.HARD_TIME/Constants.TIMER_INTERVAL));
+
+
 
 
 

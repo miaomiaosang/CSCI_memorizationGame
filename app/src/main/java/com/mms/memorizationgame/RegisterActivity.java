@@ -132,12 +132,12 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private boolean isPasswordValid(String password) {
-        //TODO: Add own logic to check for a valid password
+        //Add own logic to check for a valid password
         String confirmPassword = mConfirmPasswordView.getText().toString();
         return confirmPassword.equals(password) && password.length() > 6;
     }
 
-    // TODO: Create a Firebase user
+    // Create a Firebase user
     private void createFirebaseUser() {
 
         final String email = mEmailView.getText().toString();
@@ -172,15 +172,10 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    // TODO: Save the display name to Shared Preferences
-//    private void saveDisplayName() {
-//        String displayName = mUsernameView.getText().toString();
-//        SharedPreferences prefs = getSharedPreferences(CHAT_PREFS, 0);
-//        prefs.edit().putString(DISPLAY_NAME_KEY, displayName).apply();
-//    }
 
 
-    // TODO: Create an alert dialog to show in case registration failed
+
+    // Create an alert dialog to show in case registration failed
     private void showErrorDialog(String message){
 
         new AlertDialog.Builder(this)

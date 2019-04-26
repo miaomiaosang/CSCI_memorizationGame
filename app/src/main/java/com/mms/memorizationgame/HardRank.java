@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import com.mms.memorizationgame.Adapters.AdapterRank;
 
 
-
+//This is similar with easyRank
 
 public class HardRank extends AppCompatActivity {
 
