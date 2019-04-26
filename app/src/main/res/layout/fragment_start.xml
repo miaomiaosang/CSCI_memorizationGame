@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Start"
+    android:padding="20dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Memorization"
+            android:textAlignment="center"
+            android:textColor="#262626"
+            android:textSize="42sp" />
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-thin"
+            android:text="Game"
+            android:textAlignment="center"
+            android:textColor="#262626"
+            android:textSize="42sp" />
+
+        <Button
+            android:id="@+id/easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Easy"
+            android:layout_below="@id/name2"
+            android:layout_marginTop="100dp"
+            />
+
+        <Button
+            android:id="@+id/hard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hard"
+            android:layout_below="@id/easy"/>
+
+        <!--<Button-->
+            <!--android:id="@+id/rank"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Rank"-->
+            <!--android:layout_below="@id/hard"/>-->
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
